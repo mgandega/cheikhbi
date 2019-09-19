@@ -1,0 +1,21 @@
+{% if app.user %}
+    {% if remainingCalories < 0 %}
+    <div class="alert alert-danger" role="alert">
+        Vous avez dépassé le quota quotidien conseillé de calories - Vous en êtes à <strong>{{ - remainingCalories + constant('User::MAX_ADVICED_DAILY_CALORIES') }} calories</strong>.
+    </div>
+
+    {% elseif remainingCalories == 0 %}
+
+    <div class="alert alert-warning" role="alert">
+        Vous avez consommé le quota quotidien conseillé de calories de {{ constant('User::MAX_ADVICED_DAILY_CALORIES') }} calories.
+    </div>
+
+    {% elseif remainingCalories is null %}
+
+    {% else %}
+
+    <div class="alert alert-success" role="alert">
+        Votre quota n'est pas encore atteint. Il vous reste {{ remainingCalories }} calories à consommer aujourd'hui.
+    </div>
+    {% endif %}
+{% endif %}

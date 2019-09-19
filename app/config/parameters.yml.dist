@@ -1,0 +1,5 @@
+parameters:
+    secret: you_need_to_change_it
+
+    github_client_id: the client id of your github oauth app
+    github_client_secret: the client secret of your github oauth app
