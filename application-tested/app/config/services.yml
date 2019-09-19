@@ -1,0 +1,8 @@
+services:
+    github_authenticator:
+        class: AppBundle\Security\GithubAuthenticator
+        arguments: ["@csa_guzzle.client.github_oauth", %github_client_id%, %github_client_secret%, "@router"]
+
+    github_user_provider:
+        class: AppBundle\Security\GithubUserProvider
+        arguments: ["@csa_guzzle.client.github_api", "@serializer"]

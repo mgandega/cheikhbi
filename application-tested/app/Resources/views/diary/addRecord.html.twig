@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block heading %}{% endblock %}
+
+{% block body %}
+    <h1>Ajouter un repas</h1>
+
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+
+        <button type="submit" class="btn btn-success btn-lg pull-right">Ajouter</button>
+    {{ form_end(form) }}
+{% endblock %}
